@@ -9,8 +9,6 @@ module.exports = function(app, config) {
     app.set('port', config.port);
     app.set('views', config.root + '/app/views');
     app.set('view engine', 'html');
-    // assign the jade engine to .jade files
-    app.engine('jade', cons.jade);
     app.engine('html', cons.underscore);
     app.use(express.favicon(config.root + '/public/img/favicon.ico'));
     app.use(express.logger('dev'));
