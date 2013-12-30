@@ -17,3 +17,12 @@ exports.index = function(req, res){
 	});
   });
 };
+
+exports.info = function(req, res) {
+	layout.render(req, res, function(err, $){
+		res.render('home/info', function(err, html){
+			$('body').append(html);
+			res.send($.html());
+		});
+	});
+};
