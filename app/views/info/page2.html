@@ -1,0 +1,7 @@
+<h1>You found the second info page!</h1>
+<p>The list of events include:</p>
+<ul>
+	<% for (var i = 0; i < events.length; i++) { %>
+	<li><%= events[i].day %> - <%= events[i].time%>: <%= events[i].title %></li>
+	<% } %>
+</ul>
