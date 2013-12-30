@@ -8,8 +8,7 @@ var config = {
     app: {
       name: 'express-rest-client'
     },
-    port: 3000,
-    db: 'mongodb://localhost/express-rest-client-development'
+    port: 3000
   },
 
   test: {
@@ -17,8 +16,7 @@ var config = {
     app: {
       name: 'express-rest-client'
     },
-    port: 3000,
-    db: 'mongodb://localhost/express-rest-client-test'
+    port: 3000
   },
 
   production: {
@@ -26,8 +24,7 @@ var config = {
     app: {
       name: 'express-rest-client'
     },
-    port: 3000,
-    db: 'mongodb://localhost/express-rest-client-production'
+    port: 3000
   }
 };
 
