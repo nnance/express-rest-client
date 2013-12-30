@@ -11,11 +11,16 @@ exports.pages = function(req, res){
 		});
 	};
 
-	rest.get('http://loopthread.appspot.com/rest/calendars/agxzfmxvb3B0aHJlYWRyKgsSD0NhbGVuZGFyQ2F0YWxvZxjxqAIMCxINRXZlbnRDYWxlbmRhchgCDA/feed').on('complete', function(data) {
-		var model = {
-			title: 'Generator-Express MVC',
-			events: data
-		};
-		render(model);
-	});
+	var model = {
+		title: 'Generator-Express MVC',
+		events: []
+	};
+	if (req.query.cal) {
+		rest.get('http://loopthread.appspot.com/rest/calendars/' + req.query.cal + '/feed').on('complete', function(data) {
+			model.events = data;
+			render(model);
+		});
+	} else {
+		render(model);		
+	}
 };
